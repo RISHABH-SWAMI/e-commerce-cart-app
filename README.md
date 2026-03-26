@@ -28,7 +28,7 @@ cd e-commerce
 
 ### 2. Install dependencies
 
-npm install
+npm install or npm i --legacy-peer-deps
 
 
 ### 3. Run the application
