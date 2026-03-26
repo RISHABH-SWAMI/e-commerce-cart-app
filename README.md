@@ -15,7 +15,7 @@ An e-commerce web application which has cart functionality
 
 Tech Stack
 
-* Frontend: React / HTML / CSS / JavaScript
+* Frontend: React,HTML,CSS, Typescript
 
 ---
 
