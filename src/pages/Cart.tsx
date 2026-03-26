@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Cart.module.css';
 import { useCart } from '../store/CartContext.tsx';
 import CartDetails from '../components/CartDetails.tsx';

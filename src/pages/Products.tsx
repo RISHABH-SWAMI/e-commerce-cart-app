@@ -2,13 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styles from './Products.module.css';
 import ProductsList from '../components/ProductsList.tsx';
 
-const categories = [
-  "men's clothing",
-  'jewelery',
-  'electronics',
-  "women's clothing",
-];
-
 type Product = {
   id: number;
   title: string;
