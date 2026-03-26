@@ -1,0 +1,88 @@
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: #eee;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.backButton {
+  background-color: transparent;
+  border: 1px solid #bbb;
+  color: #eee;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 14px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+
+.title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.description {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.addToCart {
+  padding: 12px 25px;
+  background-color: #00b894;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addToCart:hover {
+  background-color: #019875;
+}
+
+.loading {
+  color: #aaa;
+  text-align: center;
+  margin-top: 50px;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.addToCart.pop {
+  animation: pop 0.4s ease-out;
+}
