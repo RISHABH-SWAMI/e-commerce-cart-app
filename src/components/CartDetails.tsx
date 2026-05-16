@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./CartDetails.module.css";
-import { useCart } from "../store/CartContext.tsx";
 import { cartActions } from "../redux-store/cart-slice.ts";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux-store/index.ts";

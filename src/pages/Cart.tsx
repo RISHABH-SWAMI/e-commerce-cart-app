@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from './Cart.module.css';
-// import { useCart } from '../store/CartContext.tsx';
 import CartDetails from '../components/CartDetails.tsx';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux-store/index.ts';
 
 const Cart = () => {
-  // const { cart, totalItems, totalPrice } = useCart();
   const {cart,  totalItems, totalPrice} = useSelector((state:RootState) => state.cart);
   // console.log(state, "checkState")
 

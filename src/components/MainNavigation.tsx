@@ -1,7 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import classes from './MainNavigation.module.css';
 import { RootState } from '../redux-store/index';
-// import { useCart } from '../store/CartContext.tsx';
 import { useSelector } from 'react-redux';
 
 function MainNavigation() {
