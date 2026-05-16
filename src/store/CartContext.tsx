@@ -47,9 +47,12 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
+
   // Adding items to cart
   const addItemsToCart = (product: CartItem) => {
+
     setCart((prev: CartItem[]) => {
+      console.log(prev, "PrevItemArray")
       const existingItemFound = prev.find((item) => item.id === product.id);
 
       if (existingItemFound) {
@@ -87,6 +90,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   // calculate total items in cart
   let totalItems = 0;
   for (const item of cart) {
+    console.log(cart, "checkinside")
     totalItems = totalItems + item.quantity;
   }
 

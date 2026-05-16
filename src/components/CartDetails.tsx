@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
-import styles from './CartDetails.module.css';
-import { useCart } from '../store/CartContext.tsx';
+import React, { useState } from "react";
+import styles from "./CartDetails.module.css";
+import { useCart } from "../store/CartContext.tsx";
+import { cartActions } from "../redux-store/cart-slice.ts";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../redux-store/index.ts";
 
 interface CartItem {
   id: number;
@@ -15,12 +18,13 @@ interface CartDetailsProps {
 }
 
 const CartDetails: React.FC<CartDetailsProps> = ({ cart }) => {
-  const { removeItemsFromCart } = useCart();
   const [isPopping, setIsPopping] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleClick = (id) => {
     setIsPopping(true);
-    removeItemsFromCart(id);
+    // removeItemsFromCart(id);
+    dispatch(cartActions.removeItemsFromCart(id));
     setTimeout(() => {
       setIsPopping(false);
     }, 600);
@@ -38,7 +42,7 @@ const CartDetails: React.FC<CartDetailsProps> = ({ cart }) => {
         </div>
 
         <button
-          className={`${styles.removeBtn} ${isPopping ? styles.pop : ''}`}
+          className={`${styles.removeBtn} ${isPopping ? styles.pop : ""}`}
           onClick={() => handleClick(cart.id)}
         >
           Remove

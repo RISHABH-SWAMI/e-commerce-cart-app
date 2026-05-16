@@ -1,9 +1,12 @@
 import { Link, NavLink } from 'react-router-dom';
 import classes from './MainNavigation.module.css';
-import { useCart } from '../store/CartContext.tsx';
+import { RootState } from '../redux-store/index';
+// import { useCart } from '../store/CartContext.tsx';
+import { useSelector } from 'react-redux';
 
 function MainNavigation() {
-  const {totalItems} = useCart();
+  const state = useSelector((state:RootState) => state.cart);
+  console.log(state, "check")
   return (
     <header className={classes.header}>
       <nav className={classes.nav}>
@@ -31,7 +34,9 @@ function MainNavigation() {
           </li>
         </ul>
         <Link to="/cart">
-          <button className={classes.cartBtn}>Cart {totalItems} </button>
+          <button className={classes.cartBtn}>Cart {" "} 
+              {state.cart.length}
+             </button>
         </Link>
       </nav>
     </header>

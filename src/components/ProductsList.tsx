@@ -14,6 +14,7 @@ interface ProductsListProps {
 }
 
 const ProductsList:React.FC<ProductsListProps> = ({ product }) => {
+  console.log(product, "productCheckall")
   return (
     <>
       <Link to={`/products/${product.id}`}>

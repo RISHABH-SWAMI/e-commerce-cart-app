@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styles from './ProductDetails.module.css';
-import { useCart } from '../store/CartContext.tsx';
+// import { useCart } from '../store/CartContext.tsx';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../redux-store/index.ts';
+import { cartActions } from '../redux-store/cart-slice.ts';
 
 type Product = {
   id: number;
@@ -16,9 +19,9 @@ const ProductDetails = () => {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
-  const { addItemsToCart } = useCart();
+  // const { addItemsToCart } = useCart();
   const [isPopping, setIsPopping] = useState(false);
-
+  const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,6 +35,7 @@ const ProductDetails = () => {
           alert('Product not found');
         }
         const data: Product = await response.json();
+        console.log(data, "fetchedProduct");
         setProduct(data);
       } catch (err) {
         // setError(err.message);
@@ -52,9 +56,11 @@ const ProductDetails = () => {
     return <p className={styles.error}>Product not found</p>;
   }
 
+  console.log(product, "productCheck");
+
   const handleClick = () => {
     setIsPopping(true);
-    addItemsToCart(product);
+      dispatch(cartActions.addToCart(product));
     setTimeout(() => {
       setIsPopping(false)
     }, 600)
