@@ -13,7 +13,7 @@ type Product = {
 type ProductsState = {
     productsData: Product[],
     loading:Boolean,
-    error: string | null,
+    // error: string | null,
     selectedCategory: string,
     sortOrder: "asc" | "desc" | "";
 }
@@ -21,7 +21,7 @@ type ProductsState = {
 const initialState: ProductsState = {
     productsData: [],
     loading: false,
-    error : null,
+    // error : null,
     selectedCategory: "",
     sortOrder: "",
 }
@@ -36,9 +36,9 @@ const productSlice = createSlice({
         setProducts(state, action) {
             state.productsData = action.payload;
         },
-        setError(state, action) {
-            state.error = action.payload;
-        },
+        // setError(state, action) {
+        //     state.error = action.payload;
+        // },
         setSelectedCategory(state, action) {
             state.selectedCategory = action.payload
         },

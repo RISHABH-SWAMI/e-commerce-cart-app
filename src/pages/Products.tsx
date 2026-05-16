@@ -18,7 +18,7 @@
   const Products:React.FC = () => {
     const [categories, setCategories] = useState<string[]>([]);
     const dispatch = useDispatch<AppDispatch>();
-    const { productsData, loading, error, selectedCategory, sortOrder } =
+    const { productsData, loading, selectedCategory, sortOrder } =
       useSelector((state:RootState) => state.products);
 
     useEffect(() => {
